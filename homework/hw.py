@@ -95,19 +95,21 @@ class Move_Tutor:
         self.move_list = []
         self.name = pokemon
         
+        
     def teach_move(self):
         import re
         if len(self.move_list) <= 4:
             while len(self.move_list) <= 4:
-                new_move = input('Input new move')
-                old_move = input('what move would you like to replace?')
-                return re.sub(f'{old_move}','{new_move}',self.move_list)
-                break
+                if n_move in self.move_list:
+                    print('Please enter valid input')
+                    old_move = input('what move would you like to replace?')
+                    self.move_list.pop(old_move)
+                    n_move = input('Input new move')
+                    self.move_list.append(n_move) 
+                    print
             
             
             
-        #         if move in self.move_list:
-        #             print('Please enter valid input')
                 
         #         elif move not in self.move_list:
         #             self.move_list.appent()
